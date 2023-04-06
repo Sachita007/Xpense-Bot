@@ -258,8 +258,7 @@ def reply():
     elif len(words) > 1 and db.check_for_account(number=sender_info) == False:
         db.add_account(number=sender_info, name=incoming_msg)
         reply = "User Added Successfully! 🎉\nPlease type hello to get started"
-        reply_trs = translate(reply, db.read_language(number=sender_info))
-        message.body(reply_trs)
+        message.body(reply)
         responded = True
 
     if not responded:
